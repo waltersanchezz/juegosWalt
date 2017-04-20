@@ -1,3 +1,44 @@
-<h1>
-  {{title}}
-</h1>
+<nav>
+  <div class="nav-wrapper #212121 grey darken-4">
+    <a href="" class="brand-logo">WORLDS GAMES</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="">INICIO</a></li>
+      <li><a href="">COMENTARIOS</a></li>
+      <li><a href="">CONTACTO</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div id="test4" class="col s12">
+     <ul class="collapsible #a5d6a7 green lighten-3" data-collapsible="expandable" >
+                <li (click)="TodoRegistros()">
+                  <div id="listarRegistros" class="collapsible-header #a5d6a7 green lighten-3"><i class="material-icons">description</i>
+                    Todos los registros
+                    
+                    <ul class="collection">
+                      <li *ngFor="let juegoW of registroList">
+                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                        <h4>Nombre completo: {{juegoW.nombre}} {{juegoW.apellido}}</h4>
+                        <p>Correo: {{juegoW.correo}}<br>
+                           Categoria: {{juegoW.categoria}}<br>
+                           Preferido: {{juegoW.preferido}}<br>
+                           Consola: {{juegoW.consola}}<br>
+
+                        </p>
+                      </li>   
+                    </ul>  
+                    
+                  </div>
+                </li>
+          </ul>  
+  </div>
+
+
+
+  <div id="test2" class="col s12"></div>
+  
+<div class="col s12 m8 l6"> <!-- Note that "m8 l9" was added -->      
+      <juego-wal>
+      </juego-wal>
+</div>

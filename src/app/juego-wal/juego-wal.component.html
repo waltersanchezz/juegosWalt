@@ -1,0 +1,272 @@
+                                               
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <div class="row">
+      <div class="col s12" align="center"><h3 class="titulo">WORLDS GAMES</h3></div><br><br><br>
+
+
+
+
+  <div class="row">
+    
+      <div class="col s6"><h4 class="titulo">Registrate</h4></div>
+      <div class="col s6"><h4 class="titulo">Mejores Categorias</h4></div>
+
+      
+    <div class="col s6 #a5d6a7 green lighten-3">
+
+      <div class="row">
+        <form class="col s12" #formRegistro="ngForm" novalidate>
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="Ingrese su Nombre" 
+                id="nombre" 
+                type="text" 
+                class="validate"
+                [class.invalid]="!nombreTxt.valid"
+                name="nombre"
+                #nombreTxt="ngModel"
+                [(ngModel)]="registroACrear.nombre"
+                required>
+
+                <label for="nombre"
+                data-error="El nombre es requerido"
+                data-success="aceptado" 
+                class="varios">Nombre
+                </label>
+              </div>
+            
+
+              <div class="input-field col s6">
+                <input placeholder="Ingrese su Apellido" 
+                id="apellido" 
+                type="text" 
+                class="validate"
+                [class.invalid]="!apellidoTxt.valid"
+                name="apellido"
+                #apellidoTxt="ngModel"
+                [(ngModel)]="registroACrear.apellido"
+                required>
+
+                <label for="apellido" 
+                data-error="El apellido es requerido"
+                data-success="aceptado"
+                class="varios">Apellido
+                </label>
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="correo" 
+                type="text" 
+                class="validate"
+                [class.invalid]="!correoTxt.valid"
+                name="correo"
+                #correoTxt="ngModel"
+                [(ngModel)]="registroACrear.correo"
+                required>
+
+                <label for="correo"
+                data-error="El correo es requerido"
+                data-success="aceptado"  
+                class="varios">Correo electronico
+                </label>
+              </div>
+            </div>
+            <br><br>
+
+            <span>Categoria en juegos</span>
+              <select class="browser-default" 
+                id="categoria"
+                [class.invalid]="!categoriaTxt.valid"
+                name="categoria"
+                #categoriaTxt="ngModel"
+                [(ngModel)]="registroACrear.categoria"
+                required>
+                <option value="" disabled selected>Seleccione una categoria</option>
+                <option value="Accion">Accion</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Carreras">Carreras</option>
+                <option value="Deporte">Deporte</option>
+                <option value="Estrategia">Estrategia</option>
+              </select>
+              <br><br>
+              
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="preferido" 
+                  type="text" 
+                  class="validate"
+                  [class.invalid]="!preferidoTxt.valid"
+                  name="preferido"
+                  #preferidoTxt="ngModel"
+                  [(ngModel)]="registroACrear.preferido"
+                  required>
+
+                  <label for="preferido"
+                  data-error="El juego preferido es requerido"
+                  data-success="aceptado"  
+                  class="varios">Juego preferido
+                  </label>
+                </div>
+              </div>
+              <br>
+              <br>
+
+            <span>Consola Favorita</span>
+              <select class="browser-default" 
+                id="consola"
+                [class.invalid]="!consolaTxt.valid"
+                name="consola"
+                #consolaTxt="ngModel"
+                [(ngModel)]="registroACrear.consola"
+                required>
+                <option value="" disabled selected>Seleccione una consola</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Xbox360">Xbox360</option>
+                <option value="XboxOne">XboxOne</option>
+                <option value="PlayStation2">PlayStation2</option>
+                <option value="PlayStation3">PlayStation3</option>
+                <option value="PlayStation4">PlayStation4</option>
+              </select>
+              <br><br><br>
+
+               <button class="btn waves-effect waves-light" 
+               type="submit" 
+               name="action"
+               [disabled]="!formRegistro.valid"
+                (click)="guardarRegistro()">Aceptar
+                  <i class="material-icons right">send</i>
+              </button>
+          </form>
+        </div>
+    </div>
+    <br>
+
+
+<div class="col s6 #a5d6a7 green lighten-3">
+
+            <div class="col s12 m11">
+              <div class="card horizontal">
+                <div class="card-image">
+                  <img src="assets/imagenes/accion.jpg" width="150" height="210">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Esta categoria es donde el jugador debe usar su velocidad, destreza y tiempo de reaccion.
+                       En este tipo de categoria la se suele usar la violencia como principal caracteristica de 
+                       interaccion mas especificamente el combate con armas de fuego o cuerpo a cuerpo.
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">Accion</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="col s12 m11">
+              <div class="card horizontal">
+                <div class="card-image">
+                  <img src="assets/imagenes/aventura.jpg" width="150" height="210">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Esta categoria esta caracterizada por la investigacion, exploracion, la solucion
+                      de rompecabezas, la interaccion con personajes del Videojuego, y un enfoque en el 
+                      relato en vez de desafios basados en reflejos.
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">Aventura</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                     
+
+             <div class="col s12 m11">
+              <div class="card horizontal">
+                <div class="card-image">
+                  <img src="assets/imagenes/deporte.jpg" width="150" height="210">
+                </div>
+                <div class="card-stacked">
+                  <div class="card-content">
+                    <p>Esta categoria simula el campo de deportes tradicionales. Estos Videojuegos son sumamente
+                      populares, algunos de estos resaltan en realidad del campo de juego, mientras otros destacan
+                      la estrategia detras del deporte y otros con efectos comicos.
+                    </p>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">Deporte</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                     
+                      
+
+    </div>        
+  </div>          
+</div>
+
+
+
+   <div class="row">
+
+      <div class="col s12"></div>
+      <div class="col s6"> <div class="card">
+    <div class="card-content">
+      <p>WORLDS GAMES es una pagina donde podras encontrar diferentes referencias de los diferentes juegos en las diferentes consolas que existen en el mundo,
+        ya sea de la familia de "XBOX" o de la familia de "PLAYSTATION", cabe destacar que podras inscribirte para tener uan mejor experiencia de esta pagina, 
+        te invitamos a inscribirte y disfrutar de esta pagina. Bienvenido.
+      </p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#test">Sin imagen</a></li>
+        <li class="tab"><a href="#test1">Imagen 1</a></li>
+        <li class="tab"><a href="#test12">Imagen 2</a></li>
+      </ul>
+    </div>
+    <div class="card-content #66bb6a green lighten-1">
+      <div id="test"></div>
+      <div id="test1"><img src="assets/imagenes/guerra.jpg" width="350" height="210"></div>
+      <div id="test12"><img src="assets/imagenes/futbol.jpg" width="350" height="210"></div>
+    </div>
+    </div>
+  </div>
+
+      <div class="col s6">
+        
+      </div>
+    </div>
+  
+  
+ <footer class="page-footer #66bb6a green lighten-1">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Entrega de Proyecto</h5>
+                <p class="grey-text text-lighten-4">Proyecto con Visual Studio Code, Angular-2 y Materialize.
+                  
+                </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Ver</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="http://umanizales.edu.co/">Universidad de Manizales</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://materializecss.com/">Materialize</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://000webhost.com/">000Webhost</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Realizado por: Walter Sanchez, Estudiante de Tecnologia en Informatica. Universidad de Manizales
+            </div>
+          </div>
+</footer>
